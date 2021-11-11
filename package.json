@@ -1,0 +1,65 @@
+{
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "url": "https://github.com/NestRay/better-validation-pipe"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@nestray/better-validation-pipe",
+  "author": {
+    "name": "Alireza Zamani",
+    "email": "alirezazamani2922@gmail.com"
+  },
+  "module": "dist/better-validation-pipe.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/better-validation-pipe.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/better-validation-pipe.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^6.0.4",
+    "husky": "^7.0.4",
+    "size-limit": "^6.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.2.0",
+    "reflect-metadata": "^0.1.13"
+  }
+}

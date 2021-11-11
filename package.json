@@ -10,7 +10,9 @@
   "engines": {
     "node": ">=10"
   },
+  "homepage": "https://github.com/NestRay",
   "repository": {
+    "type": "git",
     "url": "https://github.com/NestRay/better-validation-pipe"
   },
   "scripts": {
@@ -35,10 +37,7 @@
     "trailingComma": "es5"
   },
   "name": "@nestray/better-validation-pipe",
-  "author": {
-    "name": "Alireza Zamani",
-    "email": "alirezazamani2922@gmail.com"
-  },
+  "author": "Alireza Zamani",
   "module": "dist/better-validation-pipe.esm.js",
   "size-limit": [
     {
@@ -53,6 +52,7 @@
   "devDependencies": {
     "@size-limit/preset-small-lib": "^6.0.4",
     "husky": "^7.0.4",
+    "np": "^7.5.0",
     "size-limit": "^6.0.4",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",

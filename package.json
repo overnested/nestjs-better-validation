@@ -49,6 +49,18 @@
       "limit": "10 KB"
     }
   ],
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ]
+    ]
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^6.0.4",
     "husky": "^7.0.4",

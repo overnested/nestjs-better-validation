@@ -46,3 +46,7 @@ npm install @nestray/better-validation-pipe
 ## Motivation
 
 This behavior is achievable by passing a custom `exceptionFactory` to the original pipe, but I found myself writing the same exception factory for each one of my projects, so I made this small package.
+
+## Inspiration
+
+This is the same way [Laravel](https://laravel.com/docs/master/validation) returns errors; as an object that contains arrays of errors (strings).

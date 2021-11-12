@@ -34,13 +34,13 @@ So then, on your frontend, you can show each error next to its relavant field, i
 On Yarn:
 
 ```shell
-yarn add @nestray/better-validation-pipe
+yarn add @exonest/better-validation-pipe
 ```
 
 On NPM:
 
 ```shell
-npm install @nestray/better-validation-pipe
+npm install @exonest/better-validation-pipe
 ```
 
 ## Motivation

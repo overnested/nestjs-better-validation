@@ -10,10 +10,10 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://github.com/NestRay",
+  "homepage": "https://github.com/exonest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NestRay/better-validation-pipe"
+    "url": "https://github.com/exonest/better-validation-pipe"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -36,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@nestray/better-validation-pipe",
+  "name": "@exonest/better-validation-pipe",
   "author": "Alireza Zamani",
   "module": "dist/better-validation-pipe.esm.js",
   "size-limit": [

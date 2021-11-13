@@ -12,7 +12,7 @@ export class ValidationPipe extends OriginalValidationPipe {
       .filter(item => !!item.constraints)
       .map(item => ({
         errors: Object.values(item.constraints || {}),
-        path: (item as any).path || item.property,
+        field: (item as any).field || item.property,
       }))
       .filter(errorObject => errorObject.errors.length > 0)
       .flatten()
@@ -24,7 +24,7 @@ export class ValidationPipe extends OriginalValidationPipe {
     error: ValidationError
   ): ValidationError {
     return ({
-      path: `${parentPath}.${error.property}`,
+      field: `${parentPath}.${error.property}`,
       ...super.prependConstraintsWithParentProp(parentPath, error),
     } as unknown) as ValidationError;
   }

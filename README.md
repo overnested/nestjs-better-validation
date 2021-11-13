@@ -65,3 +65,40 @@ Just use it as you would normally use [Nest's built-in validation pipe](https://
 ## Motivation
 
 This behavior is achievable by passing a custom `exceptionFactory` to the original pipe, but I found myself writing the same exception factory for each one of my projects, so I made this package to do the job.
+
+## GraphQL Validation Filter
+
+This filter is just what I personally use for my GraphQL responses. it catches the validation exceptions and returns them as the following object:
+
+```ts
+@ObjectType()
+export class UserError {
+  @Field(() => [String], { nullable: true })
+  field: string[];
+
+  @Field(() => String)
+  message: string;
+}
+```
+
+Additionally, your returned objects should contain a `userErrors` field, for example:
+
+```ts
+@ObjectType()
+export class PostCreatePayload {
+  @Field(() => Post)
+  post: Post;
+
+  @Field(() => [UserError])
+  userErrors: UserError[];
+}
+```
+
+To use the filter, add it filter to your main.ts file:
+
+```ts
+import { GraphqlValidationFilter } from '@exonest/better-validation';
+
+// ...
+app.useGlobalFilters(new GraphqlValidationFilter());
+```

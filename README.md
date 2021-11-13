@@ -49,13 +49,13 @@ So then, on your frontend, you can show each error next to its relavant field, i
 On Yarn:
 
 ```shell
-yarn add @exonest/better-validation-pipe
+yarn add @exonest/better-validation
 ```
 
 On NPM:
 
 ```shell
-npm install @exonest/better-validation-pipe
+npm install @exonest/better-validation
 ```
 
 ## Usage

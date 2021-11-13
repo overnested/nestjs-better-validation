@@ -13,7 +13,7 @@
   "homepage": "https://github.com/exonest",
   "repository": {
     "type": "git",
-    "url": "https://github.com/exonest/better-validation-pipe"
+    "url": "https://github.com/exonest/better-validation"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -36,16 +36,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@exonest/better-validation-pipe",
+  "name": "@exonest/better-validation",
   "author": "Alireza Zamani",
-  "module": "dist/better-validation-pipe.esm.js",
+  "module": "dist/better-validation.esm.js",
   "size-limit": [
     {
-      "path": "dist/better-validation-pipe.cjs.production.min.js",
+      "path": "dist/better-validation.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/better-validation-pipe.esm.js",
+      "path": "dist/better-validation.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -72,6 +72,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^8.2.0",
+    "@nestjs/graphql": "^9.1.1",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "reflect-metadata": "^0.1.13"

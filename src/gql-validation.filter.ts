@@ -11,7 +11,7 @@ export class GraphqlValidationFilter implements GqlExceptionFilter {
       if (
         Array.isArray(response.message) &&
         Array.isArray(response.message[0].errors) &&
-        typeof response.message[0].field === 'string'
+        typeof response.message[0].path === 'string'
       ) {
         return {
           userErrors: response.message.map((error: any) => ({

@@ -3,6 +3,7 @@ import {
   ValidationPipe as OriginalValidationPipe,
 } from '@nestjs/common';
 import { HttpErrorByCode } from '@nestjs/common/utils/http-error-by-code.util';
+import { transformErrors } from './error-transformer';
 
 export class ValidationPipe extends OriginalValidationPipe {
   public createExceptionFactory() {
@@ -10,10 +11,7 @@ export class ValidationPipe extends OriginalValidationPipe {
       if (this.isDetailedOutputDisabled) {
         return new HttpErrorByCode[this.errorHttpStatusCode]();
       }
-      const errors: Record<string, unknown> = {};
-      validationErrors.forEach(error => {
-        errors[error.property] = Object.values(error.constraints || {});
-      });
+      const errors = transformErrors(validationErrors);
       return new HttpErrorByCode[this.errorHttpStatusCode](errors);
     };
   }

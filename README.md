@@ -10,7 +10,7 @@ The default validation pipe is great, but error it returns is just an array of e
 {
   "statusCode": 400,
   "error": "Bad Request",
-  "message": ["email must be an email", "phone cannot be empty"]
+  "message": ["email must be an email", "phone should not be empty"]
 }
 ```
 
@@ -20,10 +20,25 @@ This package changes the `message` to be an object with field names as keys:
 {
   "statusCode": 400,
   "error": "Bad Request",
-  "message": {
-    "email": ["email must be an email"],
-    "phone": ["phone cannot be empty"]
-  }
+  "message": [
+    {
+      "field": ["email"],
+      "errors": ["email must be an email"]
+    },
+    {
+      "field": ["phone"],
+      "errors": ["phone should not be empty"]
+    }
+  ]
+}
+```
+
+It also works for [nested values](https://github.com/typestack/class-validator#validating-nested-objects):
+
+```json
+{
+  "field": ["nestedObject", "name"],
+  "errors": ["name should not be empty"]
 }
 ```
 
@@ -43,10 +58,10 @@ On NPM:
 npm install @exonest/better-validation-pipe
 ```
 
+## Usage
+
+Just use it as you would normally use [Nest's built-in validation pipe](https://docs.nestjs.com/techniques/validation#using-the-built-in-validationpipe). You can also pass options to it, just like you would with the built-in one.
+
 ## Motivation
 
-This behavior is achievable by passing a custom `exceptionFactory` to the original pipe, but I found myself writing the same exception factory for each one of my projects, so I made this small package.
-
-## Inspiration
-
-This is the same way [Laravel](https://laravel.com/docs/master/validation) returns errors; as an object that contains arrays of errors (strings).
+This behavior is achievable by passing a custom `exceptionFactory` to the original pipe, but I found myself writing the same exception factory for each one of my projects, so I made this package to do the job.

@@ -22,22 +22,22 @@ This package changes the `message` to be an object with field names as keys:
   "error": "Bad Request",
   "message": [
     {
-      "field": "email",
+      "path": "email",
       "errors": ["email must be an email"]
     },
     {
-      "field": "phone",
+      "path": "phone",
       "errors": ["phone should not be empty"]
     }
   ]
 }
 ```
 
-It also works for [nested values](https://github.com/typestack/class-validator#validating-nested-objects):
+It also works with [nested validations](https://github.com/typestack/class-validator#validating-nested-objects):
 
 ```json
 {
-  "field": "nestedObject.name",
+  "path": "nestedObject.name",
   "errors": ["name should not be empty"]
 }
 ```

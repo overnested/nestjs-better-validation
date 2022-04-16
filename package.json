@@ -1,5 +1,5 @@
 {
-  "version": "0.4.1",
+  "version": "0.4.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -10,10 +10,10 @@
   "engines": {
     "node": ">=10"
   },
-  "homepage": "https://github.com/exonest",
+  "homepage": "https://github.com/overnested",
   "repository": {
     "type": "git",
-    "url": "https://github.com/exonest/better-validation"
+    "url": "https://github.com/overnested/nestjs-better-validation"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -36,16 +36,19 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@exonest/better-validation",
-  "author": "Alireza Zamani",
-  "module": "dist/better-validation.esm.js",
+  "name": "nestjs-better-validation",
+  "author": {
+    "email": "alirezazamani2922@gmail.com",
+    "name": "Alireza Zamani"
+  },
+  "module": "dist/nestjs-better-validation.esm.js",
   "size-limit": [
     {
-      "path": "dist/better-validation.cjs.production.min.js",
+      "path": "dist/nestjs-better-validation.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/better-validation.esm.js",
+      "path": "dist/nestjs-better-validation.esm.js",
       "limit": "10 KB"
     }
   ],

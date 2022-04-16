@@ -49,13 +49,13 @@ So then, on your frontend, you can show each error next to its relavant field, i
 On Yarn:
 
 ```shell
-yarn add @exonest/better-validation
+yarn add nestjs-better-validation
 ```
 
 On NPM:
 
 ```shell
-npm install @exonest/better-validation
+npm install nestjs-better-validation
 ```
 
 ## Usage
@@ -97,7 +97,7 @@ export class PostCreatePayload {
 To use the filter, add it filter to your main.ts file:
 
 ```ts
-import { GraphqlValidationFilter } from '@exonest/better-validation';
+import { GraphqlValidationFilter } from 'nestjs-better-validation';
 
 // ...
 app.useGlobalFilters(new GraphqlValidationFilter());
